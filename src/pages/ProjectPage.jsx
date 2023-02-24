@@ -1,6 +1,6 @@
 //Data
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom" //helps us access the URL id 
+import { useParams, Link } from "react-router-dom" //helps us access the URL id 
 
 //dummy data
 import { oneProject } from "../data";
@@ -23,6 +23,7 @@ useEffect(() => {
 }, []);
 
   return (
+    <>
     <div>
       <h2>{project.title}</h2>
       <h3>Created on: {project.date_created}</h3>
@@ -41,6 +42,10 @@ useEffect(() => {
         })}
       </ul>
     </div>
+    <div id="pledge-button">
+      <Link to="/pledges">Submit a Pledge!</Link>
+    </div>
+    </>
   );
 }
 

@@ -2,17 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function PledgeForm() {
+
     //State
     const [pledgeDetails, setpledgeDetails] = useState({
+    // default values 
         amount: "",
         comment:"",
-        anonymous: "",
+        anonymous: false,
         project: "",
     });
 
     //Hooks
-    const navigate = useNavigate(); //using the function useNavigate from react-router-dom.
-
+    const navigate = useNavigate(); //using the function use Navigate from react-router-dom.
+    
     //Actions
     //everytime input changes, it calls this function called handleChange. 
     //whenever we call this function, an event is passed through it. The target is the input (username,password input)
@@ -27,37 +29,73 @@ function PledgeForm() {
         }));
     };
 
-    const postData = async () => { //we are using async as we are doing await first
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}pledges/`,
-          {
-            method: "post",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(pledgeDetails),
-          }
-        );
-        return response.json();
-      };
+    // const postData = async () => { //we are using async as we are doing await first
+    //     const response = await fetch(
+    //       `${import.meta.env.VITE_API_URL}pledges/`,
+    //       {
+    //         method: "post",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(pledgeDetails),
+    //       }
+    //     );
+    //     return response.json();
+    //   };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (window.localStorage.getItem("token")) {
-            console.log("token exists");
-            await postData();
-            navigate("/");
+        const loggedIn = window.localStorage.getItem("token");
+
+        if (loggedIn) {
+          try {
+            const response = await fetch(
+            `${import.meta.env.VITE_API_URL}pledges/`,
+            {
+            method: "post",
+            headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${loggedIn}`,
+            "Project": //a way to say linked to this current page
+            },
+            body: JSON.stringify(pledgeDetails),
+            }
+        );
+        navigate("/");
+      } catch (err) {
+        console.error(err);
         }
+      } else {
+        navigate(`/login`);
+//       }
+//         return response.json();
+//       };
+//           }
+//         }
+
+//         if("token"){
+//           console.log("token exists");
+//           await postData();
+//           navigate("/");
+// // trying to submit this but not working - will need to check with mentor.
+
+      
+//         // if (window.localStorage.getItem("token")) {
+//         //     console.log("token exists");
+//         //     await postData();
+//         //     navigate("/");
+//         // }
         
-      };
+    };
+  };
 
     return (
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="amount">Amount:</label>
           <input
-            type="text"
+            type="number"
             id="amount"
             onChange={handleChange}
             placeholder="Enter Amount"
@@ -78,7 +116,7 @@ function PledgeForm() {
             type="radio"
             id="anonymous"
             onChange={handleChange}
-            value="Yes"
+            value="True"
             name="anonymous"
           />
             <label for="yes">Yes</label>
@@ -86,7 +124,7 @@ function PledgeForm() {
             type="radio"
             id="anonymous"
             onChange={handleChange}
-            value="No"
+            value="False"
             name="anonymous"
           />
             <label for="No">No</label>
@@ -94,8 +132,8 @@ function PledgeForm() {
         <div>
           <label htmlFor="Project">Choose the Project:</label>
           <input
-            type="comment"
-            id="comment"
+            type="Number"
+            id="project"
             onChange={handleChange}
             placeholder="Add a Comment"
           />
