@@ -1,6 +1,7 @@
 //Data
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom" //helps us access the URL id 
+import PledgeForm from "../components/PledgeForm/PledgeForm";
 
 //dummy data
 import { oneProject } from "../data";
@@ -21,6 +22,8 @@ useEffect(() => {
     setProject(data);
   });
 }, []);
+
+< PledgeForm project={project} />
 
   return (
     <>

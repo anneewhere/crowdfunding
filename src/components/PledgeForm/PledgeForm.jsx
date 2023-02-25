@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-function PledgeForm() {
+function PledgeForm(props) {
+
+  const { project } = props;
 
     //State
     const [pledgeDetails, setpledgeDetails] = useState({
@@ -9,12 +11,12 @@ function PledgeForm() {
         amount: "",
         comment:"",
         anonymous: false,
-        project: "",
+        project: null,
     });
 
     //Hooks
     const navigate = useNavigate(); //using the function use Navigate from react-router-dom.
-    
+    const { id } = useParams();
     //Actions
     //everytime input changes, it calls this function called handleChange. 
     //whenever we call this function, an event is passed through it. The target is the input (username,password input)
@@ -26,6 +28,7 @@ function PledgeForm() {
         setpledgeDetails((pledgeDetails) =>({
             ...pledgeDetails, ///... doesn't give nested objects
             [id]: value,
+
         }));
     };
 
@@ -57,7 +60,7 @@ function PledgeForm() {
             headers: {
             "Content-Type": "application/json",
             "Authorization": `Token ${loggedIn}`,
-            "Project": //a way to say linked to this current page
+            // "project": `${project.id}`, //not working
             },
             body: JSON.stringify(pledgeDetails),
             }
@@ -129,7 +132,7 @@ function PledgeForm() {
           />
             <label for="No">No</label>
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="Project">Choose the Project:</label>
           <input
             type="Number"
@@ -137,7 +140,7 @@ function PledgeForm() {
             onChange={handleChange}
             placeholder="Add a Comment"
           />
-        </div>
+        </div> */}
         <button type="submit">
           Submit Pledge
         </button>

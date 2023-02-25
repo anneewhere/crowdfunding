@@ -6,9 +6,10 @@ import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import PledgePage from "./pages/PledgePage";
 import ProjectSubmissionPage from "./pages/ProjectSubmissionPage";
+import SignUpPage from "./pages/SignUpPage";
 
 // Components
-import Nav from "./components/Nav/nav";
+import Nav from "./components/Nav/Nav";
 
 import { useState } from "react";
 
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { path: "/project/:id", element: <ProjectPage /> }, //putting an "id" in our path parameter gives its own unique URL
       { path: "/pledges", element: <PledgePage /> },
       { path: "/projects/", element: <ProjectSubmissionPage />},
+      { path: "/users/", element: <SignUpPage />},
     ],
   },
 ]);
