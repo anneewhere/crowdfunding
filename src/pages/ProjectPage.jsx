@@ -23,13 +23,13 @@ useEffect(() => {
   });
 }, []);
 
-< PledgeForm project={project} />
+const date = new Date(project.date_created); // new Date() is a funciton in javascript ({object notation}) / (just that one value)
 
   return (
     <>
     <div>
       <h2>{project.title}</h2>
-      <h3>Created on: {project.date_created}</h3>
+      <h3>Created on: {date.toLocaleDateString()}</h3>
       {/* <h3>{`Status: ${project.is_open}`}</h3> */}
       <h3 className={`${project.is_open ? "is_open" : "is_closed"}`}>  
         {`status: ${project.is_open ? "We are taking pledges!" : "This project is closed"}`}
@@ -45,8 +45,8 @@ useEffect(() => {
         })}
       </ul>
     </div>
-    <div id="pledge-button">
-      <Link to="/pledges">Submit a Pledge!</Link>
+    <div id="pledge-form">
+       < PledgeForm project={project} />
     </div>
     </>
   );

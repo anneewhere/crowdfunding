@@ -4,7 +4,6 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
-import PledgePage from "./pages/PledgePage";
 import ProjectSubmissionPage from "./pages/ProjectSubmissionPage";
 import SignUpPage from "./pages/SignUpPage";
 
@@ -33,9 +32,9 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LoginPage />},
       { path: "/project/:id", element: <ProjectPage /> }, //putting an "id" in our path parameter gives its own unique URL
-      { path: "/pledges", element: <PledgePage /> },
-      { path: "/projects/", element: <ProjectSubmissionPage />},
-      { path: "/users/", element: <SignUpPage />},
+      // { path: "/pledges", element: <PledgePage /> },
+      { path: "/submit-project", element: <ProjectSubmissionPage />},
+      { path: "/signup", element: <SignUpPage />},
     ],
   },
 ]);

@@ -26,8 +26,10 @@ function Nav(props) {
             </div> */}
             <div id="nav-right">
                 {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
+                {!loggedIn && <Link to="/signup" className="btn">Sign Up Here</Link>}
             <div id="nav-controls">
                 <Link to="/" >Home</Link>
+                {loggedIn && <Link to="/submit-project" className="btn">Create a Project</Link>}
             </div>
             </div>
             {loggedIn && <button onClick={handleClick}>Sign Out</button>}

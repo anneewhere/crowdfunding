@@ -28,6 +28,7 @@ function PledgeForm(props) {
         setpledgeDetails((pledgeDetails) =>({
             ...pledgeDetails, ///... doesn't give nested objects
             [id]: value,
+            project: project.id,
 
         }));
     };

@@ -47,6 +47,7 @@ function LoginForm() {
         if (credentials.username && credentials.password) { //is this input area is not empty,
             const { token } = await postData(); //calls the function above and returns JSON data
             window.localStorage.setItem("token", token); //when we set an item in local, we have to set a key and value
+            window.localStorage.setItem("user.id", user.id);
             setLoggedIn(true); //if credentials correct, logged in status = true
         navigate("/"); //navigates to base url
         }

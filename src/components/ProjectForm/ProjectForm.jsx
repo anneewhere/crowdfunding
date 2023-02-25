@@ -79,6 +79,15 @@ function ProjectForm() {
             placeholder="Add your goal here"
           />
         </div>
+        <div>
+          <label htmlFor="image">Link an image for your project:</label>
+          <input
+            type="text"
+            id="image"
+            onChange={handleChange}
+            placeholder="Add your image URL here"
+          />
+        </div>
         <button type="submit">
           Submit your Project
         </button>
