@@ -61,7 +61,6 @@ function PledgeForm(props) {
             headers: {
             "Content-Type": "application/json",
             "Authorization": `Token ${loggedIn}`,
-            // "project": `${project.id}`, //not working
             },
             body: JSON.stringify(pledgeDetails),
             }
@@ -71,28 +70,12 @@ function PledgeForm(props) {
         console.error(err);
         }
       } else {
-        navigate(`/login`);
-//       }
-//         return response.json();
-//       };
-//           }
-//         }
-
-//         if("token"){
-//           console.log("token exists");
-//           await postData();
-//           navigate("/");
-// // trying to submit this but not working - will need to check with mentor.
-
-      
-//         // if (window.localStorage.getItem("token")) {
-//         //     console.log("token exists");
-//         //     await postData();
-//         //     navigate("/");
-//         // }
+        navigate(`/login`); 
         
     };
   };
+  
+  //if creating new pledge then return:
 
     return (
       <form onSubmit={handleSubmit}>
@@ -148,5 +131,7 @@ function PledgeForm(props) {
       </form>
     );
   }
+
+  //if editing a form, then return below:
   
   export default PledgeForm;

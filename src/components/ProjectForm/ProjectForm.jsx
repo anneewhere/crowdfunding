@@ -8,6 +8,8 @@ function ProjectForm() {
         description:"",
         goal: "",
         image: "",
+        date_created: null,
+        is_open: true,
     });
 
     //Hooks
@@ -24,6 +26,8 @@ function ProjectForm() {
         }));
     };
 
+    const authToken = window.localStorage.getItem("token");
+
     const postData = async () => { //we are using async as we are doing await first
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}projects/`,
@@ -31,11 +35,13 @@ function ProjectForm() {
             method: "post",
             headers: {
               "Content-Type": "application/json",
+              "Authorization": `Token ${authToken}`,
             },
             body: JSON.stringify(projectDetails),
           }
         );
         return response.json();
+        this.setprojectDetails({ project });
       };
 
     const handleSubmit = async (event) => {
@@ -48,7 +54,7 @@ function ProjectForm() {
         }
         
       };
-  
+
 
     return (
       <form onSubmit={handleSubmit}>
@@ -88,11 +94,20 @@ function ProjectForm() {
             placeholder="Add your image URL here"
           />
         </div>
+        <div>
+              <label htmlFor="is_open">Activate Project:</label>
+              <input type="checkbox" id="is_open" onChange={handleChange} />
+            </div>
+            <div>
+              <label htmlFor="date_created">Date Created:</label>
+              <input type="date" id="date_created" onChange={handleChange} />
+            </div>
         <button type="submit">
           Submit your Project
         </button>
       </form>
     );
   };
+
   
   export default ProjectForm;
