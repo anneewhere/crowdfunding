@@ -46,9 +46,8 @@ function SignUpForm() {
           console.log("token exists");
           await postData();
           navigate("/");
-      }
+      };
       
-    };
 
     return (
       <form onSubmit={handleSubmit}>
@@ -102,5 +101,6 @@ function SignUpForm() {
         </button>
       </form>
     );
+  };
   
   export default SignUpForm;

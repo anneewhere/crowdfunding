@@ -48,6 +48,7 @@ function ProjectForm() {
         }
         
       };
+  
 
     return (
       <form onSubmit={handleSubmit}>
@@ -83,6 +84,6 @@ function ProjectForm() {
         </button>
       </form>
     );
-  }
+  };
   
   export default ProjectForm;
