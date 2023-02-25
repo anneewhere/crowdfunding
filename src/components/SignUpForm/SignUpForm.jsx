@@ -103,4 +103,4 @@ function SignUpForm() {
       </form>
     );
   
-  export default ProjectForm;
+  export default SignUpForm;
