@@ -1,0 +1,36 @@
+/* navigation bar css */
+
+ul { 
+    list-style-type: none;
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5BA41;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  ul li:nth-last-child(1),
+  ul li:nth-last-child(2) {
+    border-right: none;
+  }
+
+  ul :hover {
+    text-decoration-line: underline;
+  }
+
+  ul :active {
+    color: black;
+  }

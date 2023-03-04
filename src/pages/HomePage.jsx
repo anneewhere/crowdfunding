@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import logo from "../images/logo-color.svg";
 
 // Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
+import "./HomePage.css";
 
 // Data
 import {allProjects} from "../data";
@@ -29,9 +31,17 @@ function HomePage() {
     return (
         // <> //when we are returning in react, we can only return 1 child. therefore, we want to wrap all divs in a fragment <></>
        <>
-       <div>
+       <div id="hero-section">
+            <div id="hero-left">
+            <img id="logo" src={logo} alt="Paw2PawLogo"/>
+            </div>
+            <div id="hero-right">
             <h1> Welcome to Paws2Paws</h1>
             <p>Did you break something unintentionally and you have to get it replaced or else you may be rehomed by your FUR-ious owner? Fear not! Our furry community can lend a helping paw! </p>
+            </div>
+        </div>
+        <div>
+            <h1 id="homepage-title">Contribute down below!</h1>
         </div>
         <div id="project-list">
             {projectList.map((project, key) => {

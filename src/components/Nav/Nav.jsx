@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./nav.css";
 
 // function Nav() {
 //     return (
@@ -14,26 +15,20 @@ import { Link } from "react-router-dom";
 // export default Nav;
 
 function Nav(props) {
-    const { loggedIn, setLoggedIn } = props
+    const { authToken, setAuthToken } = props;
+
     const handleClick = () => {
         window.localStorage.removeItem("token")
-        setLoggedIn(false)
+        setAuthToken(false)
     }
     return (
-        <nav>
-            {/* <div id="logo">
-                <img src="src/images/Communitarian.png" alt="communitarian-logo" />
-            </div> */}
-            <div id="nav-right">
-                {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
-                {!loggedIn && <Link to="/signup" className="btn">Sign Up Here</Link>}
-            <div id="nav-controls">
-                <Link to="/" >Home</Link>
-                {loggedIn && <Link to="/submit-project" className="btn">Create a Project</Link>}
-            </div>
-            </div>
-            {loggedIn && <button onClick={handleClick}>Sign Out</button>}
-        </nav>
+        <ul>
+            <li><Link to="/" >Home</Link></li>
+            <li class="nav-right">{!authToken && <Link to="/login" className="btn">Login In</Link>}</li>
+            <li class="nav-right">{!authToken && <Link to="/signup" className="btn">Sign Up Here</Link>}</li>
+            <li>{authToken && <Link to="/submit-project" className="btn">Create a Project</Link>}</li>
+            <li>{authToken && <button onClick={handleClick}>Sign Out</button>}</li>
+        </ul>
     );
 }
 export default Nav;

@@ -4,7 +4,7 @@ import { useNavigate,  useOutletContext } from "react-router-dom";
 function LoginForm() {
     
     //State
-    const [LoggedIn, setLoggedIn] = useOutletContext();
+    const [authToken, setAuthToken] = useOutletContext();
 
     const [credentials, setCredentials] = useState({
         username:"",
@@ -48,7 +48,7 @@ function LoginForm() {
             const { token } = await postData(); //calls the function above and returns JSON data
             window.localStorage.setItem("token", token); //when we set an item in local, we have to set a key and value
             // window.localStorage.setItem("user.id", user.id);
-            setLoggedIn(true); //if credentials correct, logged in status = true
+            setAuthToken(true); //if credentials correct, logged in status = true
         navigate("/"); //navigates to base url
         }
       };

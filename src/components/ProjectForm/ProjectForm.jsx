@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function ProjectForm() {
+function ProjectForm(props) {
+
+const { project } = props;
+
     //State
     const [projectDetails, setprojectDetails] = useState({
         title: "",
@@ -41,7 +44,6 @@ function ProjectForm() {
           }
         );
         return response.json();
-        this.setprojectDetails({ project });
       };
 
     const handleSubmit = async (event) => {

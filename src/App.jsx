@@ -6,24 +6,45 @@ import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import ProjectSubmissionPage from "./pages/ProjectSubmissionPage";
 import SignUpPage from "./pages/SignUpPage";
+import ProfilePage from "./pages/ProfilePage";
 
 // Components
-import Nav from "./components/Nav/Nav";
+import Nav from "./components/Nav/Nav.jsx";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // CSS
 import "./App.css";
+import ProjectEditPage from "./pages/ProjectEditPage";
 
 const Layout = () => {
-  const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null)
+  const [authToken, setAuthToken] = useState(window.localStorage.getItem("token") !=null)
+  console.log("test")
   return (
     <>
-      <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <Outlet context={[loggedIn, setLoggedIn]} />
+      <Nav authToken={authToken} setAuthToken={setAuthToken} />
+      <Outlet context={[authToken, setAuthToken]} />
     </>
   );
 }
+
+// const [user, setUser] = useState();
+//   useEffect(() => {
+//     const authToken = window.localStorage.getItem("token");
+//     fetch(`${import.meta.env.VITE_API_URL}<int:pk>/`, {
+//       method: "get",
+//       headers: {
+//         Authorization: `Token ${authToken}`,
+//       },
+//     })
+//       .then((results) => {
+//         return results.json();
+//       })
+//       .then((data) => {
+//         setUser(data);
+//       });
+//   }, [loggedIn]); 
+
 
 const router = createBrowserRouter([
   {
@@ -35,6 +56,8 @@ const router = createBrowserRouter([
       // { path: "/pledges", element: <PledgePage /> },
       { path: "/submit-project", element: <ProjectSubmissionPage />},
       { path: "/signup", element: <SignUpPage />},
+      { path: "/edit-project", element: <ProjectEditPage />},
+      { path: "profile/", element: <ProfilePage />},
     ],
   },
 ]);

@@ -50,9 +50,9 @@ function PledgeForm(props) {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const loggedIn = window.localStorage.getItem("token");
+        const authToken = window.localStorage.getItem("token");
 
-        if (loggedIn) {
+        if (authToken) {
           try {
             const response = await fetch(
             `${import.meta.env.VITE_API_URL}pledges/`,
@@ -60,7 +60,7 @@ function PledgeForm(props) {
             method: "post",
             headers: {
             "Content-Type": "application/json",
-            "Authorization": `Token ${loggedIn}`,
+            "Authorization": `Token ${authToken}`,
             },
             body: JSON.stringify(pledgeDetails),
             }

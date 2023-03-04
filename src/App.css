@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Pangolin&display=swap');
+
+* {
+  font-family: 'Pangolin', cursive;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 1px solid red;
+  background-color: #F5BA41;
+}
+
+h1 {
+  font-family: 'Chewy', cursive;
+  font-size: 2.4rem;
+  letter-spacing: 4px;
+}
+
 #project-list {
   display: grid;
   grid-template-columns:30% 30% 30%;
-  column-gap: 10px;
+  column-gap: 3%;
   row-gap: 10px;
+  justify-items: center;
 }
