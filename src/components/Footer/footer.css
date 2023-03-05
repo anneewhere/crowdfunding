@@ -1,6 +1,7 @@
 .footer {
     width: auto;
     background-color: #F5BA41;
-    margin: 80px 5px 0px 50px;
+    margin: 100px 50px 0px 50px;
     font-size: 10px;
+    border-top: white 2px solid;
 }
