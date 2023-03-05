@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage";
 
 // Components
 import Nav from "./components/Nav/Nav.jsx";
+import Footer from "./components/Footer/footer.jsx";
 
 import { useState, useEffect } from "react";
 
@@ -24,6 +25,7 @@ const Layout = () => {
     <>
       <Nav authToken={authToken} setAuthToken={setAuthToken} />
       <Outlet context={[authToken, setAuthToken]} />
+      <Footer />
     </>
   );
 }

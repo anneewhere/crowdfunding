@@ -3,7 +3,7 @@
 ul.nav-list { 
   list-style-type: none;
   position: sticky;
-  margin: 0px;
+  margin: 20px 0 0 30px;
   padding: 18px 0px;
   overflow: hidden;
   background-color: #F5BA41;

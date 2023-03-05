@@ -41,7 +41,11 @@
 
 #homepage-title {
     font-size: 2rem;
-    padding-left: 20px;
+    padding-left: 50px;
     color: white;
     letter-spacing: 4px;
 } 
+
+#project-list {
+    margin-left: 50px;
+}
