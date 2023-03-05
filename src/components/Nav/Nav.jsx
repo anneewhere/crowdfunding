@@ -22,12 +22,12 @@ function Nav(props) {
         setAuthToken(false)
     }
     return (
-        <ul>
-            <li><Link to="/" >Home</Link></li>
-            <li class="nav-right">{!authToken && <Link to="/login" className="btn">Login In</Link>}</li>
-            <li class="nav-right">{!authToken && <Link to="/signup" className="btn">Sign Up Here</Link>}</li>
-            <li>{authToken && <Link to="/submit-project" className="btn">Create a Project</Link>}</li>
-            <li>{authToken && <button onClick={handleClick}>Sign Out</button>}</li>
+        <ul className="nav-list">
+            <li className="nav-item"><Link to="/" >Home</Link></li>
+            <li className="nav-item">{!authToken && <Link to="/login" className="btn">Login In</Link>}</li>
+            <li className="nav-item">{!authToken && <Link to="/signup" className="btn">Sign Up Here</Link>}</li>
+            <li className="nav-item">{authToken && <Link to="/submit-project" className="btn">Create a Project</Link>}</li>
+            <li className="nav-item">{authToken && <button onClick={handleClick}>Sign Out</button>}</li>
         </ul>
     );
 }

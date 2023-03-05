@@ -4,6 +4,9 @@ import { useParams, Link, useOutletContext } from "react-router-dom" //helps us 
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 import ProjectEditForm from "../components/ProjectForm/ProjectEditForm";
 
+
+import "./ProjectPage.css";
+
 function ProjectPage(props) {
 //state
   const [project, setProject] = useState({pledges: []});
@@ -46,14 +49,21 @@ function ProjectPage(props) {
   return (
     <>
     <div>
-      <h2>{project.title}</h2>
-      <h3>Created on: {date.toLocaleDateString()}</h3>
-      {/* <h3>{`Status: ${project.is_open}`}</h3> */}
-      <h3 className={`${project.is_open ? "is_open" : "is_closed"}`}>  
-        {`status: ${project.is_open ? "We are taking pledges!" : "This project is closed"}`}
-        </h3>
-      <h3>Pledges:</h3>
-      <ul>
+    <h2 id="project-title">{project.title}</h2>
+      <div className="container">
+        <div className="item-left">
+          <img id="project-image" src={project.image} />
+        </div>
+        <div className="item-right">
+        <p className={`${project.is_open ? "is_open" : "is_closed"}`}>  
+       {` \u{1F7E2} ${project.is_open ? "We are taking pledges!" : "\u{1F534} This project is closed"}`}
+          </p>
+        <p>Created on: {date.toLocaleDateString()}</p>
+        <p>{project.description}</p>
+        </div>
+      </div>
+      <h3> {`\u{1F970}`} Thank you to all the supports below! {`\u{1F970}`}</h3>
+      <ul className="pledge-list">
         {project.pledges.map((pledgeData, key) => {
           return (
             <li key={key}>
@@ -62,11 +72,9 @@ function ProjectPage(props) {
           );
         })}
       </ul>
-    </div>
-    
-
     {!authToken && <Link to="/login">Login to Submit a pledge</Link>}
-{/* //get mentor to fix this tomorrow */}
+    {authToken && <PledgeForm project={project}/>}
+    </div>
 
     </>
   );

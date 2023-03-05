@@ -1,6 +1,6 @@
 /* navigation bar css */
 
-ul { 
+.nav-list { 
     list-style-type: none;
     position: sticky;
     margin: 0;
@@ -9,11 +9,11 @@ ul {
     background-color: #F5BA41;
   }
   
-  li {
+  .nav-item {
     float: left;
   }
   
-  li a {
+  .nav-item a {
     display: block;
     color: white;
     text-align: center;
@@ -27,10 +27,10 @@ ul {
     border-right: none;
   }
 
-  ul :hover {
+  .nav-list :hover {
     text-decoration-line: underline;
   }
 
-  ul :active {
+  .nav-list :active {
     color: black;
   }

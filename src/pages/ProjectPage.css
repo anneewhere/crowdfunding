@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+}
+
+.item-left {
+    display: flex;
+    flex-direction: row;
+    flex: wrap;
+    max-width: 600px;
+
+}
+
+#project-title {
+    display: inline-block;
+}
+
+#project-image {
+    max-height: 300px;
+    align-items: center;
+    overflow: hidden;
+}
+
+#pledge-list {
+    list-style-type: circle;
+}
