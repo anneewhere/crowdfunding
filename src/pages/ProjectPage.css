@@ -25,6 +25,8 @@
     max-height: 400px;
     align-items: center;
     overflow: hidden;
+    border: white 4px solid;
+    border-radius: 15px;
 }
 
 

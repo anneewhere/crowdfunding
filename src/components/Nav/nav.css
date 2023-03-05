@@ -1,36 +1,94 @@
 /* navigation bar css */
 
-.nav-list { 
-    list-style-type: none;
-    position: sticky;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #F5BA41;
-  }
+ul.nav-list { 
+  list-style-type: none;
+  position: sticky;
+  margin: 0px;
+  padding: 18px 0px;
+  overflow: hidden;
+  background-color: #F5BA41;
+}
   
-  .nav-item {
-    float: left;
-  }
+li.nav-item {
+  float: left;
+  margin: 0px 15px 0px 15px;
+}
   
-  .nav-item a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
+li.nav-item a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: white 2px solid;
+  border-radius: 4px;
+}
 
-  ul li:nth-last-child(1),
-  ul li:nth-last-child(2) {
-    border-right: none;
-  }
+li.nav-item button{
+  color: white;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: white 2px solid;
+  border-radius: 4px;
+}
 
-  .nav-list :hover {
-    text-decoration-line: underline;
-  }
+li.nav-item a:hover {
+  background-color: #417cf5;
+  border: #417cf5 3px solid;
+  border-radius: 5px;
+}
 
-  .nav-list :active {
-    color: black;
-  }
+li#green-btn a:hover,
+li#sign-btn a:hover {
+  background-color: #41f5ba;
+  border: #41f5ba 3px solid;
+  border-radius: 5px;
+}
+
+li.nav-item:hover{
+  animation: rotate 0.7s ease-in-out both;
+}
+
+li.nav-item button:hover,
+li#red-btn a:hover {
+  background-color: #f5417c;
+  border: #f5417c 3px solid;
+  border-radius: 5px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0,0,0);
+    }
+    25% {
+        transform: rotate(3deg) translate3d(0,0,0);
+    }
+    50% {
+        transform: rotate(-3deg) translate3d(0,0,0);
+    }
+    75% {
+        transform: rotate(1deg) translate3d(0,0,0);
+    }
+    100% {
+        transform: rotate(0deg) translate3d(0,0,0);
+    }
+}
+
+/* .nav-list :hover {
+  text-decoration-line: underline;
+}
+
+.nav-list :active {
+  color: black;
+}  */
+
+.nav-left {
+  float:left;
+}
+.nav-right {
+  float:right;
+  /* padding-right: 10px; */
+}

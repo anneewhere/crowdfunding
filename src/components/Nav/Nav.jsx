@@ -23,11 +23,15 @@ function Nav(props) {
     }
     return (
         <ul className="nav-list">
+            <div className="nav-left">
             <li className="nav-item"><Link to="/" >Home</Link></li>
-            <li className="nav-item">{!authToken && <Link to="/login" className="btn">Login In</Link>}</li>
-            <li className="nav-item">{!authToken && <Link to="/signup" className="btn">Sign Up Here</Link>}</li>
-            <li className="nav-item">{authToken && <Link to="/submit-project" className="btn">Create a Project</Link>}</li>
-            <li className="nav-item">{authToken && <button onClick={handleClick}>Sign Out</button>}</li>
+            </div>
+            <div className="nav-right">
+            <li className="nav-item" id="red-btn">{!authToken && <Link to="/login">Login In</Link>}</li>
+            <li className="nav-item" id="sign-btn">{!authToken && <Link to="/signup">Sign Up Here</Link>}</li>
+            <li className="nav-item" id="green-btn">{authToken && <Link to="/submit-project">Create a Project</Link>}</li>
+            <li className="nav-item" >{authToken && <button onClick={handleClick}>Sign Out</button>}</li>
+            </div>
         </ul>
     );
 }
