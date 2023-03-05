@@ -62,16 +62,17 @@ function ProjectPage(props) {
         <p>{project.description}</p>
         </div>
       </div>
-      <h3 id="pledge-title"> {`\u{1F970}`} Thank you to all the supports below! {`\u{1F970}`}</h3>
+      <h3 className="pledge-title"> {`\u{1F970}`} Thank you to all the supports below! {`\u{1F970}`}</h3>
       <ul className="pledge-list">
         {project.pledges.map((pledgeData, key) => {
           return (
-            <li key={key}>
-              {pledgeData.amount} from {pledgeData.supporter.username}
+            <li id="pledge-items" key={key}>
+              ${pledgeData.amount} from {pledgeData.supporter}
             </li>
           );
         })}
       </ul>
+    <h3 className="pledge-title"> {`\u{1F447}`} Help by submitting a pledge below! {`\u{1F447}`} </h3>
     {!authToken && <Link to="/login">Login to Submit a pledge</Link>}
     {authToken && <PledgeForm project={project}/>}
     </div>

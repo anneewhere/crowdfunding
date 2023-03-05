@@ -11,7 +11,28 @@ form {
     margin: 5px;
 }
 
-#anon-field {
+#anon-field,
+#activate-project {
     flex-direction: row;
 }
 
+.form-item input {
+    border: 2px solid #be9441;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.form-item input:hover {
+    border: 2px solid white;
+}
+
+.form-item input:active {
+    border: 2px solid white;
+}
+
+/* from projectform */
+#project-btn,
+#pledge-btn { 
+    margin: 15px 15px;
+}

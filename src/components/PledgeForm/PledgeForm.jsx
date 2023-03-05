@@ -126,7 +126,7 @@ function PledgeForm(props) {
             placeholder="Add a Comment"
           />
         </div> */}
-        <button className="blue-btn" type="submit">
+        <button className="blue-btn" id="pledge-btn" type="submit">
           Submit Pledge
         </button>
       </form>

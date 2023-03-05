@@ -12,6 +12,10 @@
     margin-left: 30px;
 }
 
+.item-right {
+    margin-left: 30px;
+}
+
 #project-title {
     width: fit-content;
     margin-left: 30px;
@@ -23,7 +27,7 @@
     overflow: hidden;
 }
 
-#pledge-title {
+.pledge-title {
     margin-left: 30px;
     font-family: 'Chewy', cursive;
     font-size: 2rem;
@@ -32,4 +36,8 @@
 
 #pledge-list {
     list-style-type: circle;
+}
+
+#pledge-items {
+    padding: 3px;
 }

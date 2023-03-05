@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "../PledgeForm/PledgeForm.css";
+
 function ProjectForm(props) {
 
 const { project } = props;
@@ -59,8 +61,10 @@ const { project } = props;
 
 
     return (
+    <>
+    <h2>Get help from the paw community <br/> by submitting a project below!</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-item">
           <label htmlFor="title">Title:</label>
           <input
             type="text"
@@ -69,7 +73,7 @@ const { project } = props;
             placeholder="Enter title"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="description">Description:</label>
           <input
             type="text"
@@ -78,7 +82,7 @@ const { project } = props;
             placeholder="Add a description here"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="goal">Enter the $ goal:</label>
           <input
             type="text"
@@ -87,7 +91,7 @@ const { project } = props;
             placeholder="Add your goal here"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="image">Link an image for your project:</label>
           <input
             type="text"
@@ -96,18 +100,19 @@ const { project } = props;
             placeholder="Add your image URL here"
           />
         </div>
-        <div>
+        <div className="form-item" id="activate-project">
               <label htmlFor="is_open">Activate Project:</label>
               <input type="checkbox" id="is_open" onChange={handleChange} />
-            </div>
-            <div>
+          </div>
+          <div className="form-item">
               <label htmlFor="date_created">Date Created:</label>
               <input type="date" id="date_created" onChange={handleChange} />
-            </div>
-        <button type="submit">
+          </div>
+        <button type="submit" className="blue-btn" id="project-btn">
           Submit your Project
         </button>
       </form>
+    </>
     );
   };
 
