@@ -62,7 +62,7 @@ function ProjectPage(props) {
         <p>{project.description}</p>
         </div>
       </div>
-      <h3> {`\u{1F970}`} Thank you to all the supports below! {`\u{1F970}`}</h3>
+      <h3 id="pledge-title"> {`\u{1F970}`} Thank you to all the supports below! {`\u{1F970}`}</h3>
       <ul className="pledge-list">
         {project.pledges.map((pledgeData, key) => {
           return (

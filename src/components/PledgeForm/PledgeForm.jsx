@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./PledgeForm.css";
 
 function PledgeForm(props) {
 
@@ -79,7 +80,7 @@ function PledgeForm(props) {
 
     return (
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-item">
           <label htmlFor="amount">Amount:</label>
           <input
             type="number"
@@ -88,7 +89,7 @@ function PledgeForm(props) {
             placeholder="Enter Amount"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="comment">Comment:</label>
           <input
             type="text"
@@ -97,7 +98,7 @@ function PledgeForm(props) {
             placeholder="Add a Comment"
           />
         </div>
-        <div>
+        <div className="form-item" id="anon-field">
           <label htmlFor="Anonymous">Would you like to stay Anonymous:</label>
           <input
             type="radio"
@@ -125,7 +126,7 @@ function PledgeForm(props) {
             placeholder="Add a Comment"
           />
         </div> */}
-        <button type="submit">
+        <button className="blue-btn" type="submit">
           Submit Pledge
         </button>
       </form>

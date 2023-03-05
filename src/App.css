@@ -15,10 +15,30 @@ h1 {
   letter-spacing: 4px;
 }
 
+h2 {
+  font-family: 'chewy', cursive;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+}
+
 #project-list {
   display: grid;
   grid-template-columns:30% 30% 30%;
   column-gap: 3%;
   row-gap: 10px;
   justify-items: center;
+}
+
+.blue-btn {
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 6px 20px;
+}
+
+.blue-btn:hover {
+  background-color: #6041f5;
+}
+
+.blue-btn:active {
+  background-color: white;
 }
