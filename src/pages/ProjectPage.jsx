@@ -73,8 +73,10 @@ function ProjectPage(props) {
         })}
       </ul>
     <h3 className="pledge-title"> {`\u{1F447}`} Help by submitting a pledge below! {`\u{1F447}`} </h3>
-    {!authToken && <Link to="/login">Login to Submit a pledge</Link>}
+    <div id="pledge-bottom">
+    {!authToken && <Link to="/login" className="blue-btn">Login to Submit a pledge</Link>}
     {authToken && <PledgeForm project={project}/>}
+    </div>
     </div>
 
     </>

@@ -30,9 +30,3 @@ form {
 .form-item input:active {
     border: 2px solid white;
 }
-
-/* from projectform */
-#project-btn,
-#pledge-btn { 
-    margin: 15px 15px;
-}

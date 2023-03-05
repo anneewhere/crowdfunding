@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate,  useOutletContext } from "react-router-dom";
 
+import "./LoginForm.css";
+
 function LoginForm() {
     
     //State
@@ -54,8 +56,10 @@ function LoginForm() {
       };
 
     return (
-      <form onSubmit={handleSubmit}>
-        <div>
+    <>
+    <h3>Login</h3>
+        <form onSubmit={handleSubmit}>
+        <div className="form-item">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -64,7 +68,7 @@ function LoginForm() {
             placeholder="Enter username"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -73,10 +77,11 @@ function LoginForm() {
             placeholder="Password"
           />
         </div>
-        <button type="submit">
+        <button className="blue-btn" type="submit">
           Login
         </button>
       </form>
+    </>
     );
   }
   

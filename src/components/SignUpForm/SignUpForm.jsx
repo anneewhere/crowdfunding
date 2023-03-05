@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "../LoginForm/LoginForm.css";
+
 function SignUpForm() {
     //State
     const [user, setUser] = useState({
@@ -48,10 +50,11 @@ function SignUpForm() {
           navigate("/");
       };
       
-
     return (
+    <>
+    <h3>Create an account down below! {`\u{1F447}`}</h3>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-item">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -60,7 +63,7 @@ function SignUpForm() {
             placeholder="Enter username"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="first_name">First name:</label>
           <input
             type="text"
@@ -69,7 +72,7 @@ function SignUpForm() {
             placeholder="Enter your first name"
           />
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="last_name">Last name:</label>
           <input
             type="text"
@@ -78,8 +81,8 @@ function SignUpForm() {
             placeholder="Enter your last name"
           />
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="form-item" id="email-item">
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
             id="email"
@@ -87,8 +90,8 @@ function SignUpForm() {
             placeholder="Enter your email here"
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="form-item">
+          <label htmlFor="password">Password:</label>
           <input
             type="text"
             id="password"
@@ -96,10 +99,11 @@ function SignUpForm() {
             placeholder="Enter your password"
           />
         </div>
-        <button type="submit">
+        <button className="blue-btn" type="submit">
           Submit your Project
         </button>
       </form>
+    </>
     );
   };
   

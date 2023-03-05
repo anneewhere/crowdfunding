@@ -21,6 +21,13 @@ h2 {
   letter-spacing: 0.3rem;
 }
 
+h3 {
+margin-left: 30px;
+font-family: 'Chewy', cursive;
+font-size: 2rem;
+letter-spacing: 3px;
+}
+
 #project-list {
   display: grid;
   grid-template-columns:30% 30% 30%;
@@ -33,6 +40,7 @@ h2 {
   border: 2px white solid;
   border-radius: 5px;
   padding: 6px 20px;
+  margin: 15px 15px;
 }
 
 .blue-btn:hover {
