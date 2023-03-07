@@ -67,7 +67,7 @@ function ProjectPage(props) {
         {project.pledges.map((pledgeData, key) => {
           return (
             <li id="pledge-items" key={key}>
-              ${pledgeData.amount} from {pledgeData.supporter}
+              ${pledgeData.amount} from {pledgeData.supporter.first_name}
             </li>
           );
         })}

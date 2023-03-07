@@ -23,6 +23,13 @@ form {
     border-radius: 5px;
 }
 
+.form-item textarea {
+    border: 2px solid #be9441;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
 .form-item input:hover {
     border: 2px solid white;
 }

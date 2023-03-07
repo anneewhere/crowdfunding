@@ -73,10 +73,12 @@ const { project } = props;
             placeholder="Enter title"
           />
         </div>
-        <div className="form-item">
+        <div className="form-item" id="description">
           <label htmlFor="description">Description:</label>
-          <input
+          <textarea
             type="text"
+            rows="5"
+            cols="80"
             id="description"
             onChange={handleChange}
             placeholder="Add a description here"
